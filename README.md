@@ -1,6 +1,6 @@
 # Calculator
 
-A simple calculator and unit converter app with Material Design 3 inspired by Windows Calculator
+A simple calculator app
 
 ## Features
 
