@@ -11,9 +11,14 @@ void main() {
   final settingsmodel = SettingsModel();
   settingsmodel.load();
 
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider.value(value: settingsmodel),
-  ], child: const MyApp()));
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: settingsmodel),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -23,12 +28,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SettingsModel settings = Provider.of<SettingsModel>(context);
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      systemNavigationBarDividerColor: Colors.transparent,
-      systemNavigationBarContrastEnforced: true,
-      systemNavigationBarColor: Colors.transparent,
-    ));
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        systemNavigationBarDividerColor: Colors.transparent,
+        systemNavigationBarContrastEnforced: true,
+        systemNavigationBarColor: Colors.transparent,
+      ),
+    );
 
     final defaultLightColorScheme =
         ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 9, 116, 216));
